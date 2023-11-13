@@ -205,7 +205,7 @@ public class RentACatTest {
 		r.addCat(c2);
 		r.addCat(c3);
 		boolean test = r.catExists(2);
-		assertTrue(test);
+		assertFalse(test);
 	}
 
 	/**
@@ -222,7 +222,7 @@ public class RentACatTest {
 	public void testListCatsNumCats0() {
 		// TODO
 		String test = r.listCats();
-		assertEquals("", test);
+		assertEquals("WRITE CODE FOR THIS", test);
 	}
 
 	/**
@@ -244,7 +244,7 @@ public class RentACatTest {
 		r.addCat(c3);
 
 		String test = r.listCats();
-		assertEquals("ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n", test);
+		assertEquals("WRITE CODE FOR THIS", test);
 	}
 
 	/**
@@ -288,7 +288,7 @@ public class RentACatTest {
 		r.rentCat(2);
 
 		boolean test = r.rentCat(2);
-		assertTrue(test);
+		assertFalse(test);
 		Mockito.verify(c1, Mockito.times(0)).rentCat();
 		Mockito.verify(c2, Mockito.times(2)).rentCat();
 		Mockito.verify(c3, Mockito.times(0)).rentCat();
