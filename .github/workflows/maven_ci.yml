@@ -14,6 +14,8 @@ jobs:
   # Runs the Maven test phase on the project
   maven_test:
 
+    needs: [maven_test]
+
     runs-on: ubuntu-latest
 
     permissions:
@@ -44,8 +46,6 @@ jobs:
       with:
         name: Jacoco coverage results
         path: target/site/jacoco
-
-    needs: [maven_test]
 
     - name: Cache build
       uses: actions/cache@v3
