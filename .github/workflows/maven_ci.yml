@@ -45,6 +45,8 @@ jobs:
         name: Jacoco coverage results
         path: target/site/jacoco
 
+    needs: [maven_test]
+
     - name: Cache build
       uses: actions/cache@v3
       with:
